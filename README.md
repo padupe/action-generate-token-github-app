@@ -22,7 +22,7 @@ Useful for organizations that own [GitHub App's](https://docs.github.com/en/apps
 
 ## Flow
 
-![](./assets/flow.png)
+![](./docs/assets/flow.png)
 
 ## Requirements
 
