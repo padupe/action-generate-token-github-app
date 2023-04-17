@@ -19,7 +19,7 @@ inputs:
     required: false
     default: 2
 outputs:
-  success:
+  token:
     description: 'Token generated from GitHub App.'
 runs:
   using: 'node16'
