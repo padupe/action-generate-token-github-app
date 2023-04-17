@@ -69,6 +69,8 @@ The most appropriate use (and that makes the most sense), is implementing this a
 
 ```yaml
 [...]
+      - name: Generate Token from GitHub App
+        id: generate-token-github-app
         uses: padupe/action-generate-token-github-app@1.0.0
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
