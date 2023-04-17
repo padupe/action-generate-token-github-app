@@ -1,0 +1,26 @@
+name: 'Generate Token from GitHub App'
+description: 'Action to generate token for GitHub App.'
+author: 'Paulo Eduardo Peixoto'
+branding:
+  color: 'gray-dark'
+  icon: 'briefcase'
+inputs:
+  appId:
+    description: 'GitHub App - App Id.'
+    required: true
+  installationId:
+    description: 'GitHub App - Installation Id.'
+    required: true
+  privateKey:
+    description: 'GitHub App - Private Key.'
+    required: true
+  expiresMinutes:
+    description: 'Interval of minutes that the JWT (generated during the process) will be valid to generate tokens.'
+    required: false
+    default: 2
+outputs:
+  success:
+    description: 'Token generated from GitHub App.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
