@@ -1,1 +1,1 @@
-export * from './jsonwebtoken'
+export * from './generateJWT'
