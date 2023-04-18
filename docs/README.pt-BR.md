@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Token from GitHub App
-        uses: padupe/action-generate-token-github-app@1.0.0
+        uses: padupe/action-generate-token-github-app@1.0.1
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
@@ -69,7 +69,7 @@ O uso mais adequado (e que faz mais sentido), é implementando esta _action_ com
 [...]
       - name: Generate Token from GitHub App
         id: generate-token-github-app
-        uses: padupe/action-generate-token-github-app@1.0.0
+        uses: padupe/action-generate-token-github-app@1.0.1
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
