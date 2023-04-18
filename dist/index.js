@@ -30215,10 +30215,7 @@ var generateJWT_1 = __nccwpck_require__(964);
 var octokit_1 = __nccwpck_require__(9651);
 var appId = Number((0, core_1.getInput)('appId'));
 var privateKey = (0, core_1.getInput)('privateKey');
-console.log("auth.ts -> appId: ".concat(appId));
-console.log("auth.ts -> privateKey: ".concat(privateKey));
 var tokenJWT = (0, generateJWT_1.generateJWT)(appId, privateKey);
-console.log("auth.ts -> tokenJWT: ".concat(tokenJWT));
 exports.auth = (0, octokit_1.createOctokitClient)(tokenJWT);
 
 
@@ -30233,12 +30230,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createOctokitClient = void 0;
 var core_1 = __nccwpck_require__(6762);
 function createOctokitClient(token) {
-    console.log('Chamou "createOctokitClient"');
-    console.log("createOctokitclient -> token: ".concat(token));
     var octokit = new core_1.Octokit({
         auth: token,
     });
-    console.log('Concluir "createOctokitClient".');
     return octokit;
 }
 exports.createOctokitClient = createOctokitClient;
@@ -30539,11 +30533,8 @@ function generateJWT(appId, privateKey) {
         exp: Math.floor(Date.now() / 1000) + expiresMinutes * 60,
         iss: appId,
     };
-    console.log("generateJWT -> appId: ".concat(appId));
-    console.log("generateJWT -> privateKey: ".concat(privateKey));
     var pem = privateKey.replace(/\\n/g, '\n');
     var jwt = (0, jsonwebtoken_1.sign)(payload, pem, { algorithm: 'RS256' });
-    console.log("generateJWT -> jwt gerado: ".concat(jwt));
     return jwt;
 }
 exports.generateJWT = generateJWT;

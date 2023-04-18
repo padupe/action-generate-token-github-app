@@ -11,14 +11,9 @@ export function generateJWT(appId: number, privateKey: string) {
     iss: appId,
   }
 
-  console.log(`generateJWT -> appId: ${appId}`)
-  console.log(`generateJWT -> privateKey: ${privateKey}`)
-
   const pem = privateKey.replace(/\\n/g, '\n')
 
   const jwt = sign(payload, pem, { algorithm: 'RS256' })
-
-  console.log(`generateJWT -> jwt gerado: ${jwt}`)
 
   return jwt
 }
