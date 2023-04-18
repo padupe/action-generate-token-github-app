@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Token from GitHub App
-        uses: padupe/action-generate-token-github-app@1.0.1
+        uses: padupe/action-generate-token-github-app@1.0.2
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
@@ -71,17 +71,23 @@ The most appropriate use (and that makes the most sense), is implementing this a
 [...]
       - name: Generate Token from GitHub App
         id: generate-token-github-app
-        uses: padupe/action-generate-token-github-app@1.0.1
+        uses: padupe/action-generate-token-github-app@1.0.2
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
           privateKey: ${{ secrets.CREDENTIALS_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Content Change Validation
+        uses: padupe/action-content-change-validation@1.1.4
+        with:
+          directoryOrFile: .github/workflows
+          gitHubToken: ${{ steps.generate-token-github-app.outputs.gitHubToken }}
 [...]
 ```
 
 ## Output
 
-Token to be used in interactions via [GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28).
+`gitHubToken`: token to be used in interactions via [GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28).
 
 ## Contribute to the Project
 
