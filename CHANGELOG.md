@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.2 - Output Name](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.0.2) - 2023-04-18
+## [1.0.2 - Output Name](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.0.2) - 2023-04-18
 
 ### What's Change?
 
@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - **Became:**
     - `gitHubToken`.
 
-## [1.1.1 - Change Strategy](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.0.1) - 2023-04-18
+## [1.0.1 - Change Strategy](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.0.1) - 2023-04-18
 
 ### What's Change?
 
