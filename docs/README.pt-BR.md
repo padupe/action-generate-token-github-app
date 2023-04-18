@@ -85,7 +85,7 @@ O uso mais adequado (e que faz mais sentido), é implementando esta _action_ com
 
 ## _Output_
 
-Token para ser utilizado nas interações via [API do GitHub](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
+`gitHubToken`: token para ser utilizado nas interações via [API do GitHub](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
 
 ## Contribua com o Projeto
 
