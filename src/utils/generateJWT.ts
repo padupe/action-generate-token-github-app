@@ -4,7 +4,6 @@ import { sign } from 'jsonwebtoken'
 const expiresMinutes = Number(getInput('expiresMinutes'))
 
 export function generateJWT(appId: number, privateKey: string) {
-  console.log('Chamou "generateJWT"')
   const payload = {
     iat: Math.floor(Date.now() / 1000),
     exp: Math.floor(Date.now() / 1000) + expiresMinutes * 60,

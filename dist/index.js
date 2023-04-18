@@ -30527,7 +30527,6 @@ var core_1 = __nccwpck_require__(2186);
 var jsonwebtoken_1 = __nccwpck_require__(7486);
 var expiresMinutes = Number((0, core_1.getInput)('expiresMinutes'));
 function generateJWT(appId, privateKey) {
-    console.log('Chamou "generateJWT"');
     var payload = {
         iat: Math.floor(Date.now() / 1000),
         exp: Math.floor(Date.now() / 1000) + expiresMinutes * 60,
