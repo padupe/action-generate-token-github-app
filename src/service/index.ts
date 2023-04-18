@@ -1,2 +1,2 @@
 export * from './generateTokenGitHubApp'
-export * from './interfaces'
+export * from './gitHubService'
