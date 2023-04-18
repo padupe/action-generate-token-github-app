@@ -1,15 +1,14 @@
 import { getInput, info, setFailed } from '@actions/core'
-import { generateTokenGitHubApp } from '@service/generateTokenGitHubApp'
+import { generateTokenGitHubApp } from './service/generateTokenGitHubApp'
 
-export const appId = Number(getInput('appId'))
-export const installationId = Number(getInput('installationId'))
-export const privateKey = getInput('privateKey')
+const appId = Number(getInput('appId'))
+const installationId = Number(getInput('installationId'))
 
 async function run(): Promise<void> {
   try {
     info('Start Proccess!')
     if (appId) {
-      await generateTokenGitHubApp(appId, installationId, privateKey)
+      await generateTokenGitHubApp(installationId)
     } else {
       setFailed('"appID" is required!')
     }
