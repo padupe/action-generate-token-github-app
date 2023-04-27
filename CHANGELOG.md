@@ -4,6 +4,57 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.3](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.1.3) - 2023-04-27
+
+### What's Change?
+
+Action has been adapted to be able to handle the PEM (Private Key) in its original format.
+
+```
+-----BEGIN RSA PRIVATE KEY-----
+  3333333333333333333333333333333333333333333333333333333333333333
+  5555555555555555555555555555555555555555555555555555555555555555
+  4444444444444444444444444444444444444444444444444444444444444444
+  7777777777777777777777777777777777777777777777777777777777777777
+  3333333333333333333333333333333333333333333333333333333333333333
+  8888888888888888888888888888888888888888888888888888888888888888
+  2222222222222222222222222222222222222222222222222222222222222222
+  9999999999999999999999999999999999999999999999999999999999999999
+  QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+  PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+  nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+  mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+  llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+  kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+  jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+  hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+  gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+  dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+  eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  fffffffffffffffffffffffffffffffff
+  -----END RSA PRIVATE KEY-----
+```
+
+- Added `formatPrivateKey` function to handle the responsibility of "formatting" the PEM;
+
+- The `generateJWT` function is no longer responsible for performing this formatting.
+
+New directory structure `src/utils`:
+
+- `DIR src`
+  - `DIR auth`
+  - `DIR repositories`
+  - `DIR service`
+  - `DIR utils`
+    - `formatPrivateKey.ts`
+    - `generateJWT.ts`
+    - `index.ts`
+
 ## [1.0.3 - Debug](https://github.com/padupe/action-generate-token-github-app/releases/tag/1.0.3) - 2023-04-18
 
 ### What's Change?
