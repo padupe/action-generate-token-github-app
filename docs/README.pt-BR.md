@@ -89,4 +89,4 @@ O uso mais adequado (e que faz mais sentido), é implementando esta _action_ com
 
 ## Contribua com o Projeto
 
-Confira nosso guia para [CONTRIBUIÇÃO](../CONTRIBUTING.md) na língua inglesa.
+Confira nosso guia para [CONTRIBUIÇÃO](./CONTRIBUTING.pt-BR.md).
