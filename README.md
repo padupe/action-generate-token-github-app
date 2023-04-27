@@ -28,9 +28,15 @@ Useful for organizations that own [GitHub App's](https://docs.github.com/en/apps
 
 ### Secrets
 
-Secret `CREDENTIALS_GITHUB_APP_PRIVATE_KEY` on format (no line break):
+Secret `CREDENTIALS_GITHUB_APP_PRIVATE_KEY` on PEM format:
 
-`-----BEGIN RSA PRIVATE KEY-----\n ... \n-----END RSA PRIVATE KEY-----`
+```
+-----BEGIN RSA PRIVATE KEY-----
+  9999999999999999999999999999999999999999999999999999999999999999
+  QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+  ....
+  -----END RSA PRIVATE KEY-----
+```
 
 ## Use
 
