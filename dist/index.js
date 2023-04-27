@@ -30516,6 +30516,26 @@ exports.gitHubService = gitHubService;
 
 /***/ }),
 
+/***/ 1638:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.formatPrivateKey = void 0;
+function formatPrivateKey(PEM) {
+    var initiaValue = PEM.replace(/\n/g, '\\n')
+        .replace(/\s+/g, '')
+        .replace('-----BEGINRSAPRIVATEKEY-----', '-----BEGIN RSA PRIVATE KEY-----')
+        .replace('-----ENDRSAPRIVATEKEY-----', '-----END RSA PRIVATE KEY-----');
+    var privateKeyFormat = initiaValue.replace(/\\n/g, '\n');
+    return privateKeyFormat;
+}
+exports.formatPrivateKey = formatPrivateKey;
+
+
+/***/ }),
+
 /***/ 964:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
@@ -30525,6 +30545,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.generateJWT = void 0;
 var core_1 = __nccwpck_require__(2186);
 var jsonwebtoken_1 = __nccwpck_require__(7486);
+var formatPrivateKey_1 = __nccwpck_require__(1638);
 var expiresMinutes = Number((0, core_1.getInput)('expiresMinutes'));
 function generateJWT(appId, privateKey) {
     var payload = {
@@ -30532,7 +30553,7 @@ function generateJWT(appId, privateKey) {
         exp: Math.floor(Date.now() / 1000) + expiresMinutes * 60,
         iss: appId,
     };
-    var pem = privateKey.replace(/\\n/g, '\n');
+    var pem = (0, formatPrivateKey_1.formatPrivateKey)(privateKey);
     var jwt = (0, jsonwebtoken_1.sign)(payload, pem, { algorithm: 'RS256' });
     return jwt;
 }
