@@ -26,9 +26,15 @@ _Action_ que gera Token para ser consumido nas interações via [API do GitHub](
 
 ### _Secrets_
 
-A _secret_ `CREDENTIALS_GITHUB_APP_PRIVATE_KEY` deve ser informada no seguinte formato (sem quebra de linhas):
+A _secret_ `CREDENTIALS_GITHUB_APP_PRIVATE_KEY` deve ser no formato PEM:
 
-`-----BEGIN RSA PRIVATE KEY-----\n ... \n-----END RSA PRIVATE KEY-----`
+```
+-----BEGIN RSA PRIVATE KEY-----
+  9999999999999999999999999999999999999999999999999999999999999999
+  QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+  ....
+  -----END RSA PRIVATE KEY-----
+```
 
 ## Uso
 
@@ -54,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Token from GitHub App
-        uses: padupe/action-generate-token-github-app@1.0.3
+        uses: padupe/action-generate-token-github-app@1.1.3
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
@@ -69,7 +75,7 @@ O uso mais adequado (e que faz mais sentido), é implementando esta _action_ com
 [...]
       - name: Generate Token from GitHub App
         id: generate-token-github-app
-        uses: padupe/action-generate-token-github-app@1.0.3
+        uses: padupe/action-generate-token-github-app@1.1.3
         with:
           appId: ${{ secrets.CREDENTIALS_GITHUB_APP_ID }}
           installationId: ${{ secrets.CREDENTIALS_GITHUB_APP_INSTALLATION_ID }}
