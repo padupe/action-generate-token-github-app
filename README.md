@@ -1,6 +1,6 @@
 # action-generate-token-github-app
 
-> Documentation available in Portuguese (pt-BR) [here](./docs/README-pt.md).
+> Documentation available in Portuguese (pt-BR) [here](./docs/README.pt-BR.md).
 
 ## Index
 
